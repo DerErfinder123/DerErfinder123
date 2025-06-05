@@ -20,8 +20,8 @@ class game(arcade.Window):
 
     def on_draw(self):
         self.clear()
+        self.camera.use()  # Kamera zuerst setzen
         self.scene.draw()
-        self.camera.use()
     def on_update(self, delta_time):
         
         
@@ -29,18 +29,24 @@ class game(arcade.Window):
         self.scene.update(delta_time)
         self.spieler.update()
         
-        #print(self.spieler.position)
-        self.camera.position = self.spieler.position
-        #if self.camera.position[0] -250 > 500:
-         #   self.camera.position = (0, self.spieler.position[1])
-        #if self.camera.position[1] - 250 > 500:
-         #   self.camera.position = (self.spieler.position[0], 0)
-        #if self.camera.position[0] + 250 < 0:
-           # self.camera.position = (500, self.spieler.position[1])
-        #if self.camera.position[1] + 250 < 0:
-         #   self.camera.position = (self.spieler.position[0], 500)
-        print(self.camera.position)
+        # Spielfeldgröße bestimmen (hier als Beispiel 2000x2000, passe ggf. an)
+        map_width = self.tile_map.width * self.tile_map.tile_width
+        map_height = self.tile_map.height * self.tile_map.tile_height
+
+        # Kamera folgt dem Spieler, bleibt aber im Fenster
+        cam_x = max(self.width // 2, min(self.spieler.center_x, map_width - self.width // 2))
+        cam_y = max(self.height // 2, min(self.spieler.center_y, map_height - self.height // 2))
+        self.camera.position = (cam_x, cam_y)
+
+        # print(self.spieler.position)
+        # print(self.camera.position)
         
+
+
+
+
+
+
     def on_key_press(self, symbol, modifiers):
         if symbol == arcade.key.W or symbol == arcade.key.UP:
             self.spieler.change_y = 5
@@ -66,4 +72,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-        
+
