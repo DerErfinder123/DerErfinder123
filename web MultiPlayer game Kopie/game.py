@@ -1,5 +1,6 @@
 import arcade
 import arcade.camera
+import socket
 class game(arcade.Window):
     def __init__(self):
         super().__init__(500,500, "game")
@@ -16,7 +17,17 @@ class game(arcade.Window):
         self.spieler.center_y = 100
         self.scene.add_sprite("spieler", self.spieler)
         self.camera = arcade.camera.Camera2D()
-        
+        self.server_p_positon = (0, 0)  # Initialisiere die Serverposition
+        self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.spieler2 = arcade.Sprite("spieler2.png", 1)
+        self.scene.add_sprite("spieler2", self.spieler2)
+        self.spieler2.center_x = 200
+        self.spieler2.center_y = 200
+        server_ip = "192.168.178.131"
+        server_port = 8000
+        self.client.connect((server_ip, server_port))
+        self.client.send("t".encode('utf-8'))  # Sende eine Initialnachricht an den Server
+        print("Verbunden mit Server:", server_ip, "Port:", server_port)
 
     def on_draw(self):
         self.clear()
@@ -28,6 +39,7 @@ class game(arcade.Window):
 
         self.scene.update(delta_time)
         self.spieler.update()
+        self.spieler2.update()
         
         # Spielfeldgröße bestimmen (hier als Beispiel 2000x2000, passe ggf. an)
         map_width = self.tile_map.width * self.tile_map.tile_width
@@ -37,6 +49,12 @@ class game(arcade.Window):
         cam_x = max(self.width // 2, min(self.spieler.center_x, map_width - self.width // 2))
         cam_y = max(self.height // 2, min(self.spieler.center_y, map_height - self.height // 2))
         self.camera.position = (cam_x, cam_y)
+        self.server_p_positon = self.spieler.position
+        self.server_p_positon = str(self.server_p_positon)  # Konvertiere die Position in einen String
+        self.server_p_positon = self.server_p_positon.encode("utf-8")  # Konvertiere die Position in Bytes
+
+        self.client.send(self.server_p_positon)
+        print("1")  # Sende die Position des Spielers an den Server
 
         # print(self.spieler.position)
         # print(self.camera.position)

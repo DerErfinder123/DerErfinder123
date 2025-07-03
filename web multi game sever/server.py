@@ -12,13 +12,21 @@ server.listen(2)  # Maximal 2 Verbindungen
 client_name = dict()
 
 def handle_client(client_socket, client_address):
-    client_socket.send("Willkommen auf dem Server! Bitte gib deinen Namen ein: ".encode("utf-8"))
-    name = client_socket.recv(1024).decode("utf-8")
-    client_name[client_address] = name
-    print(f"Client {client_address} verbunden als {name}")
-    while True:
-        request = client_socket.recv(1024)
-        client_socket.send()
+    try:
+    
+        client_socket.send("Willkommen auf dem Server! Bitte gib deinen Namen ein: ".encode("utf-8"))
+        name = client_socket.recv(1024).decode("utf-8")
+        client_name[client_address] = name
+        print(f"Client {client_address} verbunden als {name}")
+        while True:
+            request = client_socket.recv(1024)
+            print(f"Nachricht von {name}: {request.decode('utf-8')}")
+    except Exception as e:
+        print(f"Fehler bei der Verbindung mit {client_address}: {e}")
+    finally:
+        print(f"Verbindung mit {client_address} geschlossen.")
+        client_socket.close()
+        del client_name[client_address]
 
 print("Server läuft...")
 
