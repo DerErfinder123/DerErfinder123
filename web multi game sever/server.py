@@ -10,8 +10,10 @@ server.bind(server_adress)
 server.listen(2)  # Maximal 2 Verbindungen
 
 client_name = dict()
+position_1 = 0, 0
+position_2 = 3, 5
 
-def handle_client(client_socket, client_address):
+def handle_client1(client_socket, client_address):
     try:
     
         client_socket.send("Willkommen auf dem Server! Bitte gib deinen Namen ein: ".encode("utf-8"))
@@ -20,25 +22,46 @@ def handle_client(client_socket, client_address):
         print(f"Client {client_address} verbunden als {name}")
         while True:
             request = client_socket.recv(1024)
-            print(f"Nachricht von {name}: {request.decode('utf-8')}")
+            request = request.decode("utf-8")
+            position_1 = request
+            client_socket.send(position_1.encode("utf-8"))
+
+            print(f"Nachricht von {name}: {request}")
     except Exception as e:
         print(f"Fehler bei der Verbindung mit {client_address}: {e}")
     finally:
         print(f"Verbindung mit {client_address} geschlossen.")
         client_socket.close()
         del client_name[client_address]
-
+def handle_client2(client_socket, client_address):
+    try:
+        client_socket.send("Willkommen auf dem Server! Bitte gib deinen Namen ein: ".encode("utf-8"))
+        name = client_socket.recv(1024).decode("utf-8")
+        client_name[client_address] = name
+        print(f"Client {client_address} verbunden als {name}")
+        while True:
+            request = client_socket.recv(1024)
+            request = request.decode("utf-8")
+            position_2 = request
+            client_socket.send(position_1.encode("utf-8"))
+            print(f"Nachricht von {name}: {request}")
+    except Exception as e:
+        print(f"Fehler bei der Verbindung mit {client_address}: {e}")
+    finally:
+        print(f"Verbindung mit {client_address} geschlossen.")
+        client_socket.close()
+        del client_name[client_address]
 print("Server läuft...")
-
-while True:
-    client_socket, client_address = server.accept()
-    print("Client verbunden:", client_address)
-    thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
-    thread.start()
+client_socket, client_address = server.accept()
+print("Client verbunden:", client_address)
+thread1 = threading.Thread(target=handle_client1, args=(client_socket, client_address))
+thread1.start()
 
 
-
-
+client_socket2, client_address2 = server.accept()
+print("Client verbunden:", client_address2)
+thread2 = threading.Thread(target=handle_client2, args=(client_socket2, client_address2))
+thread2.start()
 
 
 

@@ -12,14 +12,14 @@ class game(arcade.Window):
         
         self.tile_map = arcade.load_tilemap("map.tmx",scaling=1, layer_options=self.layer_options)
         self.scene = arcade.Scene().from_tilemap(self.tile_map)
-        self.spieler = arcade.Sprite("spieler.png", 1)
+        self.spieler = arcade.Sprite("spieler2.png", 1)
         self.spieler.center_x = 100
         self.spieler.center_y = 100
         self.scene.add_sprite("spieler", self.spieler)
         self.camera = arcade.camera.Camera2D()
         self.server_p_positon = (0, 0)  # Initialisiere die Serverposition
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.spieler2 = arcade.Sprite("spieler2.png", 1)
+        self.spieler2 = arcade.Sprite("spieler.png", 1)
         self.scene.add_sprite("spieler2", self.spieler2)
         self.spieler2_s_position = (200, 200)  # Initialisiere die Position des zweiten Spielers
         self.spieler2.center_x = 200
@@ -54,7 +54,7 @@ class game(arcade.Window):
         self.server_p_positon = str(self.server_p_positon)  # Konvertiere die Position in einen String
         self.server_p_positon = self.server_p_positon.encode("utf-8")  # Konvertiere die Position in Bytes
 
-        #self.client.send(self.server_p_positon)
+        self.client.send(self.server_p_positon)
         self.spieler2_s_position = self.client.recv(1024)
         self.spieler2_s_position = self.spieler2_s_position.decode("utf-8")
         self.spieler2._position = self.spieler2_s_position
