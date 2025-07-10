@@ -27,10 +27,12 @@ class game(arcade.Window):
         server_ip = "192.168.178.131"
         server_port = 8000
         self.client.connect((server_ip, server_port))
+        print(self.client.recv(1024).decode('utf-8'))  # Empfang der Begrüßungsnachricht vom Server
         self.client.send("t".encode('utf-8'))  # Sende eine Initialnachricht an den Server
         print("Verbunden mit Server:", server_ip, "Port:", server_port)
 
     def on_draw(self):
+
         self.clear()
         self.camera.use()  # Kamera zuerst setzen
         self.scene.draw()
@@ -57,8 +59,9 @@ class game(arcade.Window):
         #self.client.send(self.server_p_positon)
         self.spieler2_s_position = self.client.recv(1024)
         self.spieler2_s_position = self.spieler2_s_position.decode("utf-8")
-        self.spieler2._position = self.spieler2_s_position
-          # Setze die Position des zweiten Spielers
+        self.spieler2_s_position = float(self.spieler2_s_position)
+        self.spieler2.position = (self.spieler2_s_position, self.spieler2.position[1])
+        # Setze die Position des zweiten Spielers
         print(self.spieler2_s_position)  # Sende die Position des Spielers an den Server
 
         # print(self.spieler.position)
