@@ -12,14 +12,15 @@ class game(arcade.Window):
         
         self.tile_map = arcade.load_tilemap("map.tmx",scaling=1, layer_options=self.layer_options)
         self.scene = arcade.Scene().from_tilemap(self.tile_map)
-        self.spieler = arcade.Sprite("spieler2.png", 1)
+        self.spieler = arcade.Sprite("spieler.png", 1)
         self.spieler.center_x = 100
         self.spieler.center_y = 100
         self.scene.add_sprite("spieler", self.spieler)
         self.camera = arcade.camera.Camera2D()
         self.server_p_positon = (0, 0)  # Initialisiere die Serverposition
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.spieler2 = arcade.Sprite("spieler.png", 1)
+        self.client.settimeout(0.1)  # Setze einen kurzen Timeout, damit das Spiel nicht einfriert
+        self.spieler2 = arcade.Sprite("spieler2.png", 1)
         self.scene.add_sprite("spieler2", self.spieler2)
         self.spieler2_s_position = (200, 200)  # Initialisiere die Position des zweiten Spielers
         self.spieler2.center_x = 200
@@ -27,10 +28,13 @@ class game(arcade.Window):
         server_ip = "192.168.178.131"
         server_port = 8000
         self.client.connect((server_ip, server_port))
-        self.client.send("t".encode('utf-8'))  # Sende eine Initialnachricht an den Server
+        print(self.client.recv(1024).decode('utf-8'))  # Empfang der Begrüßungsnachricht vom Server
+        # Sende den Spielernamen an den Server (z.B. "Spieler1")
+        self.client.send("Spieler2".encode('utf-8'))
         print("Verbunden mit Server:", server_ip, "Port:", server_port)
 
     def on_draw(self):
+
         self.clear()
         self.camera.use()  # Kamera zuerst setzen
         self.scene.draw()
@@ -50,15 +54,28 @@ class game(arcade.Window):
         cam_x = max(self.width // 2, min(self.spieler.center_x, map_width - self.width // 2))
         cam_y = max(self.height // 2, min(self.spieler.center_y, map_height - self.height // 2))
         self.camera.position = (cam_x, cam_y)
-        self.server_p_positon = self.spieler.position
-        self.server_p_positon = str(self.server_p_positon)  # Konvertiere die Position in einen String
-        self.server_p_positon = self.server_p_positon.encode("utf-8")  # Konvertiere die Position in Bytes
+        try:
+            # Position als "x,y" senden
+            pos_str = f"{self.spieler.center_x},{self.spieler.center_y}"
+            self.client.send(pos_str.encode("utf-8"))
+        except Exception as e:
+            print("Fehler beim Senden der Position:", e)
 
-        self.client.send(self.server_p_positon)
-        self.spieler2_s_position = self.client.recv(1024)
-        self.spieler2_s_position = self.spieler2_s_position.decode("utf-8")
-        self.spieler2._position = self.spieler2_s_position
-          # Setze die Position des zweiten Spielers
+        try:
+            data = self.client.recv(1024)
+            pos_str = data.decode("utf-8")
+            # Position als "x,y" empfangen und setzen
+            if "," in pos_str:
+                x_str, y_str = pos_str.split(",")
+                self.spieler2.position = (float(x_str), float(y_str))
+            else:
+                print("Ungültiges Format empfangen:", pos_str)
+        except socket.timeout:
+            # Keine Daten empfangen, ignoriere und mache weiter
+            pass
+        except Exception as e:
+            print("Fehler beim Empfangen der Position:", e)
+        # Setze die Position des zweiten Spielers
         print(self.spieler2_s_position)  # Sende die Position des Spielers an den Server
 
         # print(self.spieler.position)
