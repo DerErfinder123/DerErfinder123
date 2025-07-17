@@ -7,7 +7,7 @@ server_port = 8000
 server_adress = (server_ip, server_port)
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(server_adress)
-server.listen(2)  # Maximal 2 Verbindungen
+server.listen(2)  # Maximal 2 Verbindungen gleichzeitig
 
 client_name = dict()
 position_1 = "0,0"

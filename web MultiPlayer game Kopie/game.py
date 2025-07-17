@@ -36,7 +36,7 @@ class game(arcade.Window):
     def on_draw(self):
 
         self.clear()
-        self.camera.use()  # Kamera zuerst setzen
+        self.camera.use()  # Kamera zuerst setzen1
         self.scene.draw()
     def on_update(self, delta_time):
         
