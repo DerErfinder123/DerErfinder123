@@ -32,6 +32,7 @@ class game(arcade.Window):
         # Sende den Spielernamen an den Server (z.B. "Spieler1")
         self.client.send("Spieler1".encode('utf-8'))
         print("Verbunden mit Server:", server_ip, "Port:", server_port)
+        self.physics = arcade.PhysicsEngineSimple(self.spieler, self.scene["hindernis"])
 
     def on_draw(self):
 
@@ -45,6 +46,7 @@ class game(arcade.Window):
         self.scene.update(delta_time)
         self.spieler.update()
         self.spieler2.update()
+        self.physics.update()
         
         # Spielfeldgröße bestimmen (hier als Beispiel 2000x2000, passe ggf. an)
         map_width = self.tile_map.width * self.tile_map.tile_width
@@ -77,6 +79,7 @@ class game(arcade.Window):
             print("Fehler beim Empfangen der Position:", e)
         # Setze die Position des zweiten Spielers
         print(self.spieler2_s_position)  # Sende die Position des Spielers an den Server
+
 
         # print(self.spieler.position)
         # print(self.camera.position)
