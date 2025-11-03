@@ -13,6 +13,7 @@ class GameOfLife(arcade.Window):
         self.background_color = arcade.color.GRAY
 
         self.setup()
+        self.inloop = 0
 
     def setup(self):
         self.zellen = [[random.randint(0, 1) for _ in range(ANZAHL_ZELLEN)] for _ in range(ANZAHL_ZELLEN)]
@@ -38,7 +39,15 @@ class GameOfLife(arcade.Window):
     def on_key_press(self, key, modifiers):
         if key == arcade.key.SPACE:
             self.setup()
+        elif key == arcade.key.KEY_0:
+            if self.inloop == 1:
+                self.inloop = 0
+            else:
+                self.inloop = 1
         else:
+            self.nächste_population()
+    def on_update(self, delta_time):
+        if self.inloop == 1:
             self.nächste_population()
                     
     
