@@ -2,8 +2,8 @@ import arcade
 import random
 
 OFFSET = 25
-ZELLEN_BREITE = 25
-ANZAHL_ZELLEN = 40
+ZELLEN_BREITE = 10
+ANZAHL_ZELLEN = 80
 
 
 class GameOfLife(arcade.Window):
