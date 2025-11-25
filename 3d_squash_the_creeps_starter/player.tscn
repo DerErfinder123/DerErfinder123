@@ -5,7 +5,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 margin = 0.0
-radius = 15.143
+radius = 2.059
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_onrkg")
@@ -15,5 +15,5 @@ script = ExtResource("1_onrkg")
 [node name="charakter" parent="pivot" instance=ExtResource("1_4flbx")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-0.239076, 0.971001, 0, -0.970854, -0.23904, 0.0174175, 0.0169124, 0.0041641, 0.999848, 0, 0.189, -0.005)
+transform = Transform3D(-0.239076, 0.971001, 0, -0.970854, -0.23904, 0.0174175, 0.0169124, 0.0041641, 0.999848, 0, 0, 0)
 shape = SubResource("SphereShape3D_i3pqv")
