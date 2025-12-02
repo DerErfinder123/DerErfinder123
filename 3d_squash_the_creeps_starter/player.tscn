@@ -5,9 +5,10 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
 margin = 0.0
-radius = 2.059
+radius = 1.035
 
 [node name="player" type="CharacterBody3D"]
+collision_mask = 6
 script = ExtResource("1_onrkg")
 
 [node name="pivot" type="Node3D" parent="."]
