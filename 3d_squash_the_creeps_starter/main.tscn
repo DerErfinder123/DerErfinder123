@@ -29,7 +29,7 @@ script = ExtResource("1_0xm2m")
 mob_scence = ExtResource("2_h2yge")
 
 [node name="ground" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 collision_layer = 4
 collision_mask = 0
 
@@ -52,7 +52,6 @@ projection = 1
 size = 19.0
 
 [node name="player" parent="." instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="cylinders" type="Node3D" parent="."]
 
@@ -76,7 +75,7 @@ mesh = SubResource("CylinderMesh_1bvp3")
 curve = SubResource("Curve3D_lquwl")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.999861, -1.26371e-05, -0.0165061, -9.09493e-13, 1, -0.000765597, 0.0165061, 0.000765495, 0.99986, -29.014, -0.0290027, 29.1321)
+transform = Transform3D(0.99986, -1.26371e-05, -0.0165061, -9.09491e-13, 1, -0.000765596, 0.0165061, 0.000765495, 0.999859, -29.014, -0.0290027, 29.1321)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
