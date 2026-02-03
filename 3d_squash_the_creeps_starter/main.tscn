@@ -30,6 +30,7 @@ mob_scence = ExtResource("2_h2yge")
 
 [node name="ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+visible = false
 collision_layer = 4
 collision_mask = 0
 
@@ -45,6 +46,7 @@ shadow_enabled = true
 
 [node name="cameraPivot" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 1, 0)
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="cameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
@@ -75,7 +77,7 @@ mesh = SubResource("CylinderMesh_1bvp3")
 curve = SubResource("Curve3D_lquwl")
 
 [node name="SpawnLocation" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.99986, -1.26371e-05, -0.0165061, -9.09491e-13, 1, -0.000765596, 0.0165061, 0.000765495, 0.999859, -29.014, -0.0290027, 29.1321)
+transform = Transform3D(0.99985975, -1.2637119e-05, -0.016506098, -9.094912e-13, 0.99999994, -0.0007655954, 0.016506117, 0.0007654949, 0.99985874, -29.014, -0.0290027, 29.1321)
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5

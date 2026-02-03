@@ -1,8 +1,8 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1768320317
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1770131282
 icon.webp::CompressedTexture2D/CompressedTexture2D::27118964165343846::1762874322::1762874343::1::::<><><>0<>0<>2765b228073266418cb0e013965e5088<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
 main.gd::GDScript::7320803257968413492::1768318211::0::1::::<>Node3D<><>0<>0<><>::
-main.tscn::PackedScene::1231780434289861004::1768318211::0::1::::<><><>0<>0<><>::uid://dckitbphyo6qi::::res://main.gd<>uid://c02yywngqlcg2::::res://player.tscn<>uid://di5ff2wxb3k2h::::res://mob.tscn
+main.tscn::PackedScene::1231780434289861004::1768926727::0::1::::<><><>0<>0<><>::uid://dckitbphyo6qi::::res://main.gd<>uid://c02yywngqlcg2::::res://player.tscn<>uid://di5ff2wxb3k2h::::res://mob.tscn
 mob.gd::GDScript/GDScript::1187244834650377071::1765296832::0::1::::<>CharacterBody3D<><>0<>0<><>::
 mob.tscn::PackedScene::7783018099902327445::1768318211::0::1::::<><><>0<>0<><>::uid://q6d0p2o7651l::::res://mob.gd<>uid://bicorb7we351t::::res://art/mob.glb
 player.gd::GDScript/GDScript::100837957862336409::1765296832::0::1::::<>CharacterBody3D<><>0<>0<><>::
