@@ -1,16 +1,9 @@
 [gd_scene format=3 uid="uid://bvctvob21l41c"]
 
-[ext_resource type="MeshLibrary" uid="uid://blggsrqrllu70" path="res://final.tres" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://8g0aujt76qbd" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="MeshLibrary" uid="uid://d2f4p8ik8yy8g" path="res://mesh_lib.tres" id="2_h2yge"]
 
-[node name="Node3D" type="Node3D" unique_id=232107466]
-
-[node name="GridMap" type="GridMap" parent="." unique_id=724112061]
-mesh_library = ExtResource("1_0xm2m")
-data = {
-"cells": PackedInt32Array(0, 65535, 16, 1, 65535, 16, 1, 0, 16, 0, 0, 16, 65535, 65535, 16, 65535, 0, 16, 1, 1, 16, 0, 1, 16, 65535, 1, 16, 65534, 65535, 16, 65534, 0, 16, 65534, 1, 16, 65534, 65534, 16, 65535, 65534, 16, 0, 65534, 16, 1, 65534, 16, 2, 65534, 16, 2, 65535, 16, 2, 0, 16, 131070, 65534, 6, 131070, 65535, 6, 131070, 0, 6, 131070, 1, 6, 131071, 1, 6, 65536, 1, 6, 65537, 1, 6, 2, 1, 16, 65534, 65533, 16, 65535, 65533, 16, 0, 65533, 16, 1, 65533, 16, 2, 65533, 16, 65538, 1, 6, 131070, 65533, 6, 131071, 65533, 6, 65536, 65533, 6, 65537, 65533, 6, 65538, 65533, 6, 3, 65533, 16, 3, 65534, 16, 3, 65535, 16, 3, 0, 16, 3, 1, 16, 65534, 2, 16, 65535, 2, 16, 0, 2, 16, 1, 2, 16, 3, 2, 16, 2, 2, 16, 65534, 3, 16, 65535, 3, 16, 0, 3, 16, 1, 3, 16, 3, 3, 16, 2, 3, 16, 4, 1, 16, 4, 0, 16, 4, 65534, 16, 4, 65535, 16, 4, 65533, 16, 4, 2, 16, 4, 3, 16, 5, 2, 15, 5, 3, 15, 5, 1, 15, 5, 0, 15, 5, 65535, 15, 5, 65534, 15, 5, 65533, 15, 6, 3, 15, 7, 2, 15, 6, 2, 15, 6, 1, 15, 6, 0, 15, 6, 65535, 15, 6, 65534, 15, 6, 65533, 15, 65542, 65533, 32, 65542, 65534, 32, 65542, 3, 32, 65542, 2, 32, 65542, 1, 32, 131078, 1, 32, 131078, 2, 32, 131078, 3, 32, 131078, 65534, 32, 131078, 65533, 32, 196614, 65533, 32, 196614, 65534, 32, 196614, 1, 32, 196614, 2, 32, 196614, 3, 32, 196614, 65535, 32, 196614, 0, 32)
-}
-metadata/_editor_floor_ = Vector3(0, 4, 0)
+[node name="Node3D" type="Node" unique_id=421365697]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1437901442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.868987, 0)
@@ -20,3 +13,10 @@ omni_range = 102.878
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6715446, 4.437658, 0)
 
 [node name="Camera3D2" type="Camera3D" parent="player" unique_id=1912786944]
+current = true
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1551460367]
+mesh_library = ExtResource("2_h2yge")
+data = {
+"cells": PackedInt32Array(65532, 1, 2, 65535, 65535, 2, 1, 0, 19)
+}
