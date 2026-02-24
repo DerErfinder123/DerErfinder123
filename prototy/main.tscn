@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvctvob21l41c"]
 
 [ext_resource type="PackedScene" uid="uid://8g0aujt76qbd" path="res://player.tscn" id="2_0xm2m"]
-[ext_resource type="MeshLibrary" uid="uid://d2f4p8ik8yy8g" path="res://mesh_lib.tres" id="2_h2yge"]
+[ext_resource type="MeshLibrary" uid="uid://cdgsbkpkc6ge0" path="res://mesh_lib1.meshlib" id="2_h2yge"]
 
 [node name="Node3D" type="Node" unique_id=421365697]
 
@@ -18,5 +18,5 @@ current = true
 [node name="GridMap" type="GridMap" parent="." unique_id=1551460367]
 mesh_library = ExtResource("2_h2yge")
 data = {
-"cells": PackedInt32Array(65532, 1, 2, 65535, 65535, 2, 1, 0, 19)
+"cells": PackedInt32Array(65532, 1, 2, 65535, 65535, 2, 1, 0, 4, 0, 65535, 1, 1, 65533, 35, 2, 0, 37, 2, 1, 4, 20, 5, 4, 1, 65534, 6, 3, 1, 6, 0, 0, 37)
 }
