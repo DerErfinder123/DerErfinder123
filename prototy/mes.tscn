@@ -1719,7 +1719,7 @@ data = PackedVector3Array(0.009699999, -0.009699999, -0.009, 0.009, -0.01, -0.00
 [node name="Node3D" type="Node3D" unique_id=752854286]
 
 [node name="dirt_with_grass2" type="MeshInstance3D" parent="." unique_id=493420561]
-transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_edr8x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="dirt_with_grass2" unique_id=422570499]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://qipcj03yiwtj"]
+
+[ext_resource type="MeshLibrary" uid="uid://b3ej358ive7t1" path="res://ml.meshlib" id="1_a202f"]
+
+[node name="Node3D" type="Node3D" unique_id=1933341542]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=635511900]
+mesh_library = ExtResource("1_a202f")
+data = {
+"cells": PackedInt32Array(65535, 0, 0)
+}
