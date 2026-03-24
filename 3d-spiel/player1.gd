@@ -1,7 +1,18 @@
 extends CharacterBody3D
 @export var sensitivity = 0.002 # Wie schnell die Kamera dreht
 @onready var head =$"../head"
-  
+
+@onready var health_bar = $"../CanvasLayer/ProgressBar"
+
+var health = 100
+
+func take_damage(amount: int):
+	health -= amount
+	health_bar.value = health  # Aktualisiert den Balken sofort
+func regenerate(amount: int):
+	health += amount
+	health_bar.value = health
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED # Maus verstecken & fixieren
 
@@ -30,6 +41,10 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	if Input.is_action_just_pressed("health_+"):
+		regenerate(1)
+	if Input.is_action_just_pressed("health_-"):
+		take_damage(1)
 func _unhandled_input(event):
 	# Maus mit ESC wieder freigeben
 	if event.is_action_pressed("ui_cancel"): # "ui_cancel" ist standardmäßig ESC
@@ -45,5 +60,6 @@ func _unhandled_input(event):
 		head.rotate_x(-event.relative.y * sensitivity)
 		# Begrenzung (Clamping)
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+	
 
 	
