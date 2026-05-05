@@ -1,0 +1,33 @@
+ body {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .mitte{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .button {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            width: 150px;
+            display: inline-block;
+        }
+
+        a:hover {
+            filter: brightness(0.85)
+        }
+
+        .hintergrund-grün {
+            background-color: green;
+        }
+
+        .hintergrund-blau {
+            background-color: blue;
+        }
