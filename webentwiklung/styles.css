@@ -6,10 +6,10 @@ body {
 }
 
 .mitte {
+    height: calc(100vh - 35px);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .button {
@@ -33,6 +33,19 @@ body {
     background-color: #5B63B7;
 }
 
+.text-weiß {
+    color: white;
+    text-decoration: none;
+}
+
+a svg {
+    margin-bottom: -2px;
+}
+
+a:hover {
+    filter: brightness(0.85);
+}
+
 .text-links {
     text-align: left;
 }
@@ -53,9 +66,16 @@ button {
     border: none;
     box-shadow: none;
     font-size: inherit;
+    font-family: inherit;
     box-sizing: content-box;
+    text-align: center;
 }
 
 button:hover {
     cursor: pointer;
+}
+
+textarea {
+    width: 500px;
+    height: 300px;
 }
