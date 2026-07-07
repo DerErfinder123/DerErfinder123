@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php include "intro-funktion.php"
+?>
 
 <html>
 
@@ -23,19 +25,41 @@
         <div class="text-links">
             <h1>Login</h1>
             <p>Hier kannst du dich mit Namen und Passwort einloggen.</p>
+            <form method="POST">
             <div class="m-t-15 m-b-15">
                 <label>Name:</label>
-                <input id="name" type="text">
+                <input id="name" type="text" name="name">
             </div>
             <div class="m-t-15 m-b-15">
                 <label>Passwort:</label>
-                <input id="passwort" type="password">
+                <input id="passwort" type="password" name="passwort">
             </div>
             <div>
                 <button class="button hintergrund-grün" onclick="login()">Login</button>
                 <span id="meldung"></span>
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $passwort = $_POST["passwort"];
+
+    $anzahl = $datenbank->querySingle("SELECT COUNT(*) FROM nutzer WHERE name='$name' AND passwort='$passwort ");
+    if ($anzahl == 0) {
+        $datenbank->exec("INSERT INTO nutzer (name, passwort) VALUES ('$name', '$passwort')");
+        header("LOCATION: intern.php");
+    } else {
+        echo "<span style='color: #F17A7C;'>Nutzername bereits vergeben!</span>";
+    }
+
+}
+
+
+?>
+                
+
             </div>
         </div>
+</form>
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">
