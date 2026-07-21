@@ -1,6 +1,13 @@
 <?php
 include "intro-funktion.php";
 include "intro-funktion-intern.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $name = $_SESSION["name"];
+    $notitz = $_POST["notitz"];
+
+    $datenbank->exec("UPDATE nutzer SET notitz='$notitz' WHERE name='$name'");
+    }
 ?>
 <!DOCTYPE html>
 
@@ -33,10 +40,12 @@ include "intro-funktion-intern.php";
         </div>
         <div>
             <form method="POST">
-                <textarea id="notiz" name="notiz"></textarea>
+                <textarea id="notiz" name="notiz"><?= $datenbank->;?></textarea>
                 <button class="button hintergrund-blau" type="submit">Speichern</button>
             </form>
         </div>
+
+
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">
