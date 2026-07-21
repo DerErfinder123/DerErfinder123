@@ -38,11 +38,11 @@ body {
     text-decoration: none;
 }
 
-a svg {
+a svg, .button-link svg {
     margin-bottom: -2px;
 }
 
-a:hover {
+a:hover, .button-link:hover {
     filter: brightness(0.85);
 }
 
@@ -78,4 +78,9 @@ button:hover {
 textarea {
     width: 500px;
     height: 300px;
+}
+
+.button-link {
+    background: none;
+    padding: 0;
 }

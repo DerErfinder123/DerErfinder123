@@ -1,8 +1,7 @@
-include
-<!DOCTYPE html>
-<!DOCTYPE html>
-<?php include "intro-funktion.php"
+<?php
+include "intro-funktion.php";
 ?>
+<!DOCTYPE html>
 
 <html>
 
@@ -27,60 +26,39 @@ include
         <div class="text-links">
             <h1>Registrieren</h1>
             <p>Hier kannst du dich mit Namen und Passwort registrieren.</p>
-            <form method="post">
-            <div class="m-t-15 m-b-15">
-                <label>Name:</label>
-                <input id="name" name="name" type="text">
-            </div>
-            <div class="m-t-15 m-b-15">
-                <label>Passwort:</label>
-                <input id="passwort" name="passwort" type="password">
-            </div>
-            <div>
-                <button class="button hintergrund-blau" type="submit" >Registrieren</button>
-                <span id="meldung"></span>
-<?php
+            <form method="POST">
+                <div class="m-t-15 m-b-15">
+                    <label>Name:</label>
+                    <input id="name" name="name" type="text">
+                </div>
+                <div class="m-t-15 m-b-15">
+                    <label>Passwort:</label>
+                    <input id="passwort" name="passwort" type="password">
+                </div>
+                <div>
+                    <button class="button hintergrund-blau" type="submit">Registrieren</button>
+                    <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $name = $_POST["name"];
+                        $passwort = $_POST["passwort"];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $passwort = $_POST["passwort"];
-
-    $anzahl = $datenbank->querySingle("SELECT COUNT(*) FROM nutzer WHERE name='$name'");
-    if ($anzahl == 0) {
-        $datenbank->exec("INSERT INTO nutzer (name, passwort) VALUES ('$name', '$passwort')");
-        echo "<span style='color: #6AFBCF;'>Erfolgreich registriert!</span>";
-    } else {
-        echo "<span style='color: #F17A7C;'>Nutzername bereits vergeben!</span>";
-    }
-
-}
-
-
-?>
-            </div>
-</form>
+                        $anzahl = $datenbank->querySingle("SELECT COUNT(*) FROM nutzer WHERE name='$name'");
+                        if ($anzahl == 0) {
+                            $datenbank->exec("INSERT INTO nutzer VALUES ('$name', '$passwort')");
+                            echo "<span style='color: #6AFBCF;'>Erfolgreich registriert!</span>";
+                        } else {
+                            echo "<span style='color: #F17A7C;'>Nutzername bereits vergeben!</span>";
+                        }
+                    }
+                    ?>
+                    <span id="meldung"></span>
+                </div>
+            </form>
         </div>
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">
     </audio>
-    <script>
-        const meldungSpan = document.getElementById("meldung");
-
-        function registrieren() {
-            const name = document.getElementById("name").value;
-            const passwort = document.getElementById("passwort").value;
-
-            if (name in localStorage) {
-                meldungSpan.style.color = "#F17A7C";
-                meldungSpan.innerText = "Name schon vergeben!";
-            } else {
-                localStorage.setItem(name, passwort);
-                meldungSpan.style.color = "#6AFBCF";
-                meldungSpan.innerText = "Erfolgreich registriert!";
-            }
-        }
-    </script>
 </body>
 
 </html>

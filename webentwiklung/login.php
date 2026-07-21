@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<?php include "intro-funktion.php"
+<?php
+include "intro-funktion.php";
 ?>
+<!DOCTYPE html>
 
 <html>
 
@@ -26,60 +27,38 @@
             <h1>Login</h1>
             <p>Hier kannst du dich mit Namen und Passwort einloggen.</p>
             <form method="POST">
-            <div class="m-t-15 m-b-15">
-                <label>Name:</label>
-                <input id="name" type="text" name="name">
-            </div>
-            <div class="m-t-15 m-b-15">
-                <label>Passwort:</label>
-                <input id="passwort" type="password" name="passwort">
-            </div>
-            <div>
-                <button class="button hintergrund-grün" onclick="login()">Login</button>
-                <span id="meldung"></span>
-<?php
+                <div class="m-t-15 m-b-15">
+                    <label>Name:</label>
+                    <input id="name" name="name" type="text">
+                </div>
+                <div class="m-t-15 m-b-15">
+                    <label>Passwort:</label>
+                    <input id="passwort" name="passwort" type="password">
+                </div>
+                <div>
+                    <button class="button hintergrund-grün">Login</button>
+                    <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        $name = $_POST["name"];
+                        $passwort = $_POST["passwort"];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $passwort = $_POST["passwort"];
-
-    $anzahl = $datenbank->querySingle("SELECT COUNT(*) FROM nutzer WHERE name='$name' AND passwort='$passwort ");
-    if ($anzahl == 0) {
-        $datenbank->exec("INSERT INTO nutzer (name, passwort) VALUES ('$name', '$passwort')");
-        header("LOCATION: intern.php");
-    } else {
-        echo "<span style='color: #F17A7C;'>Nutzername bereits vergeben!</span>";
-    }
-
-}
-
-
-?>
-                
-
-            </div>
+                        $anzahl = $datenbank->querySingle("SELECT COUNT(*) FROM nutzer WHERE name='$name' AND passwort='$passwort'");
+                        if ($anzahl == 1) {
+                            $_SESSION["name"] = $name;
+                            header("Location: intern.php");
+                            exit;
+                        } else {
+                            echo "<span style='color: #F17A7C;'>Benutzername oder Passwort falsch!</span>";
+                        }
+                    }
+                    ?>
+                </div>
+            </form>
         </div>
-</form>
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">
     </audio>
-    <script>
-        const meldungSpan = document.getElementById("meldung");
-
-        function login() {
-            const name = document.getElementById("name").value;
-            const passwort = document.getElementById("passwort").value;
-
-            if (passwort == localStorage.getItem(name)) {
-                window.location.href = "intern.html";
-                localStorage.setItem("name",name)
-            } else {
-                meldungSpan.style.color = "#F17A7C";
-                meldungSpan.innerText = "Name oder Passwort falsch!";
-            }
-        }
-    </script>
 </body>
 
 </html>
