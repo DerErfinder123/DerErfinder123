@@ -5,9 +5,10 @@ include "intro-funktion-intern.php";
 $name = $_SESSION["name"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $notiz = $_POST["notiz"];
+    $zeit = time();
+    $inhalt = $_POST["inhalt"];
 
-    $datenbank->exec("UPDATE nutzer SET notiz='$notiz' WHERE name='$name'");
+    $datenbank->exec("insert into narchichten values ('$name',$zeit,'$inhalt')");
 }
 ?>
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="text-links">
         <form method="POST" action="logout.php">
-            <button class="button-link text-weiß" type="submit">
+            <a class="button-link text-weiß" href="intern.php">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -47,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button class="button hintergrund-blau" type="submit">Speichern</button>
                 </div>
             </form>
-            <a href="chat.php">
         </div>
 
     </div>
