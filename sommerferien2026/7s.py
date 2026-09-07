@@ -3,6 +3,8 @@ with open("programm.7s","r") as file:
     lines = file.readlines()
 def auswerten(ausdruck):
     ausdruck_teile = ausdruck.split(" ")
+    if ausdruck == "input":
+        return int(input)
     if len(ausdruck_teile) == 1:
         if ausdruck in variabeln:
             return int(variabeln[ausdruck])
