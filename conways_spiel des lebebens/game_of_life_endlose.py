@@ -3,13 +3,13 @@ import random
 
 OFFSET = 25
 ZELLEN_BREITE = 10
-ANZAHL_ZELLEN = 90
+ANZAHL_ZELLEN = 100
 
 
 class GameOfLife(arcade.Window):
 
     def __init__(self):
-        super().__init__(1000, 1000, "Conway's Spiel des Lebens")
+        super().__init__(2500, 2500, "Conway's Spiel des Lebens")
         self.background_color = arcade.color.GRAY
 
         self.setup()
