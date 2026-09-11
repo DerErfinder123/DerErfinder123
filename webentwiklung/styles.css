@@ -1,0 +1,137 @@
+body {
+    text-align: center;
+    color: white;
+    background-color: rgb(32, 33, 39);
+    font-family: "Courier New", Courier, monospace;
+}
+
+.mitte {
+    height: calc(100vh - 35px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: 150px;
+    display: inline-block;
+}
+
+.button:hover {
+    filter: brightness(0.85);
+}
+
+.hintergrund-grün {
+    background-color: #00AAA9;
+}
+
+.hintergrund-blau {
+    background-color: #5B63B7;
+}
+
+.text-weiß {
+    color: white;
+    text-decoration: none;
+}
+
+a svg, .button-link svg {
+    margin-bottom: -2px;
+}
+
+a:hover, .button-link:hover {
+    filter: brightness(0.85);
+}
+
+.text-links {
+    text-align: left;
+}
+
+.m-t-15 {
+    margin-top: 15px;
+}
+
+.m-b-15 {
+    margin-bottom: 15px;
+}
+
+input {
+    font-size: 12px;
+}
+
+button {
+    border: none;
+    box-shadow: none;
+    font-size: inherit;
+    font-family: inherit;
+    box-sizing: content-box;
+    text-align: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+textarea {
+    width: 500px;
+    height: 300px;
+}
+
+.notiz-container {
+    max-width: 760px;
+    width: 100%;
+    background: #222230;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.notiz-header h1 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+.notiz-header p {
+    margin: 0 0 20px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.5;
+}
+
+.notiz-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.notiz-textarea {
+    width: 100%;
+    min-height: 340px;
+    background: #1f2130;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 18px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.notiz-textarea:focus {
+    outline: none;
+    border-color: #5B63B7;
+    box-shadow: 0 0 0 3px rgba(91, 99, 183, 0.18);
+}
+
+.notiz-actions {
+    margin-top: 18px;
+    text-align: right;
+}
+
+.button-link {
+    background: none;
+    padding: 0;
+}

@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bwntc4gro4eb5"]
+
+[ext_resource type="PackedScene" uid="uid://b3md6eujol6ku" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/bricks_A.fbx" id="1_0aql8"]
+[ext_resource type="PackedScene" uid="uid://dgd3iwj8q40kq" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/bricks_B.fbx" id="2_k0xep"]
+[ext_resource type="PackedScene" uid="uid://bw1ftpfmfbxo2" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/colored_block_blue.fbx" id="3_3smws"]
+[ext_resource type="PackedScene" uid="uid://cljmjc6aml1gv" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/colored_block_green.fbx" id="4_67ne5"]
+[ext_resource type="PackedScene" uid="uid://cdk6jrhi7v05y" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/colored_block_red.fbx" id="5_5kc64"]
+[ext_resource type="PackedScene" uid="uid://ddry7k0a8vx6s" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/colored_block_yellow.fbx" id="6_mervy"]
+[ext_resource type="PackedScene" uid="uid://bropw2xvcwgps" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/decorative_block_blue.fbx" id="7_axhte"]
+[ext_resource type="PackedScene" uid="uid://cgwcsk8p4ilh4" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/decorative_block_green.fbx" id="8_1nhlt"]
+[ext_resource type="PackedScene" uid="uid://d35eslljvbxmv" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/decorative_block_red.fbx" id="9_dejot"]
+[ext_resource type="PackedScene" uid="uid://dortfngbpccca" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/decorative_block_yellow.fbx" id="10_8xsto"]
+[ext_resource type="PackedScene" uid="uid://c0xehf3nrddhn" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/dirt.fbx" id="11_4sylo"]
+[ext_resource type="PackedScene" uid="uid://cdv5vk6rp8l3f" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/dirt_with_grass.fbx" id="12_s6n5h"]
+[ext_resource type="PackedScene" uid="uid://d2r34qy8tx5ra" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/dirt_with_snow.fbx" id="13_boksi"]
+[ext_resource type="PackedScene" uid="uid://d0op0cce41hao" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/glass.fbx" id="14_ldmhx"]
+[ext_resource type="PackedScene" uid="uid://db3x24vk6lg8o" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/grass.fbx" id="15_pnnp2"]
+[ext_resource type="PackedScene" uid="uid://dcepf7vkd8rwr" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/grass_with_snow.fbx" id="16_ic3re"]
+[ext_resource type="PackedScene" uid="uid://b6qsn5kswjwly" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/gravel.fbx" id="17_qexwv"]
+[ext_resource type="PackedScene" uid="uid://chi7pesgkc8dl" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/gravel_with_grass.fbx" id="18_a3xvy"]
+[ext_resource type="PackedScene" uid="uid://df1jnsodeby10" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/gravel_with_snow.fbx" id="19_2pc2h"]
+[ext_resource type="PackedScene" uid="uid://nakpcfckg0tt" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/lava.fbx" id="20_ncoxq"]
+[ext_resource type="PackedScene" uid="uid://bqehj1sskew51" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/metal.fbx" id="21_dc5ti"]
+[ext_resource type="PackedScene" uid="uid://bikd5kfq2ucl1" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/prototype.fbx" id="22_lverv"]
+[ext_resource type="PackedScene" uid="uid://drp206cnyhaic" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/sand_A.fbx" id="23_bx6oo"]
+[ext_resource type="PackedScene" uid="uid://dwv5t5aep1v3i" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/sand_B.fbx" id="24_nyvdd"]
+[ext_resource type="PackedScene" uid="uid://42d46vve02r" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/sand_with_grass.fbx" id="25_4ceen"]
+[ext_resource type="PackedScene" uid="uid://u30hguar5v1k" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/sand_with_snow.fbx" id="26_h0umh"]
+[ext_resource type="PackedScene" uid="uid://dov6u8ye0lh31" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/snow.fbx" id="27_wp6ir"]
+[ext_resource type="PackedScene" uid="uid://duwni08ayx6mt" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/stone.fbx" id="28_i8y4c"]
+[ext_resource type="PackedScene" uid="uid://r0gvl0metfbt" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/stone_dark.fbx" id="29_4xug7"]
+[ext_resource type="PackedScene" uid="uid://b27y561hk6uar" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/stone_with_copper.fbx" id="30_hx6jf"]
+[ext_resource type="PackedScene" uid="uid://d3r5mgfyh4ujk" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/stone_with_gold.fbx" id="31_lyivb"]
+[ext_resource type="PackedScene" uid="uid://df2knhhrrrer6" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/stone_with_silver.fbx" id="32_qo0h0"]
+[ext_resource type="PackedScene" uid="uid://dky5ucltr5ot5" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/striped_block_blue.fbx" id="33_2qnf3"]
+[ext_resource type="PackedScene" uid="uid://cq0667gma6ljo" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/striped_block_green.fbx" id="34_m62m3"]
+[ext_resource type="PackedScene" uid="uid://dwjnhtt1qa15w" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/striped_block_red.fbx" id="35_d86h3"]
+[ext_resource type="PackedScene" uid="uid://bv8nq0qwi8od0" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/striped_block_yellow.fbx" id="36_8w7h8"]
+[ext_resource type="PackedScene" uid="uid://ctgcybo0smd04" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/tree.fbx" id="37_pc0j4"]
+[ext_resource type="PackedScene" uid="uid://csoe1rnbliyog" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/tree_with_snow.fbx" id="38_b77bl"]
+[ext_resource type="PackedScene" uid="uid://ctnhlvmfsamy3" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/water.fbx" id="39_4assq"]
+[ext_resource type="PackedScene" uid="uid://bd54hj36ba1yb" path="res://KayKit_BlockBits_1.0_FREE/Assets/fbx/wood.fbx" id="40_upipm"]
+
+[node name="Node3D" type="Node3D" unique_id=392487586]
+
+[node name="bricks_A" parent="." unique_id=1880774960 instance=ExtResource("1_0aql8")]
+
+[node name="bricks_B" parent="." unique_id=107727386 instance=ExtResource("2_k0xep")]
+
+[node name="colored_block_blue" parent="." unique_id=1232487187 instance=ExtResource("3_3smws")]
+
+[node name="colored_block_green" parent="." unique_id=418811975 instance=ExtResource("4_67ne5")]
+
+[node name="colored_block_red" parent="." unique_id=1562638380 instance=ExtResource("5_5kc64")]
+
+[node name="colored_block_yellow" parent="." unique_id=114861548 instance=ExtResource("6_mervy")]
+
+[node name="decorative_block_blue" parent="." unique_id=1621897262 instance=ExtResource("7_axhte")]
+
+[node name="decorative_block_green" parent="." unique_id=2088468670 instance=ExtResource("8_1nhlt")]
+
+[node name="decorative_block_red" parent="." unique_id=634396963 instance=ExtResource("9_dejot")]
+
+[node name="decorative_block_yellow" parent="." unique_id=236193705 instance=ExtResource("10_8xsto")]
+
+[node name="dirt" parent="." unique_id=716497079 instance=ExtResource("11_4sylo")]
+
+[node name="dirt_with_grass" parent="." unique_id=318588518 instance=ExtResource("12_s6n5h")]
+
+[node name="dirt_with_snow" parent="." unique_id=95461501 instance=ExtResource("13_boksi")]
+
+[node name="glass" parent="." unique_id=1235235292 instance=ExtResource("14_ldmhx")]
+
+[node name="grass" parent="." unique_id=647332532 instance=ExtResource("15_pnnp2")]
+
+[node name="grass_with_snow" parent="." unique_id=754092261 instance=ExtResource("16_ic3re")]
+
+[node name="gravel" parent="." unique_id=1004864448 instance=ExtResource("17_qexwv")]
+
+[node name="gravel_with_grass" parent="." unique_id=1572007302 instance=ExtResource("18_a3xvy")]
+
+[node name="gravel_with_snow" parent="." unique_id=1854173647 instance=ExtResource("19_2pc2h")]
+
+[node name="lava" parent="." unique_id=1004480173 instance=ExtResource("20_ncoxq")]
+
+[node name="metal" parent="." unique_id=765927204 instance=ExtResource("21_dc5ti")]
+
+[node name="prototype" parent="." unique_id=1357025026 instance=ExtResource("22_lverv")]
+
+[node name="sand_A" parent="." unique_id=1021023622 instance=ExtResource("23_bx6oo")]
+
+[node name="sand_B" parent="." unique_id=157013656 instance=ExtResource("24_nyvdd")]
+
+[node name="sand_with_grass" parent="." unique_id=2074822315 instance=ExtResource("25_4ceen")]
+
+[node name="sand_with_snow" parent="." unique_id=66834826 instance=ExtResource("26_h0umh")]
+
+[node name="snow" parent="." unique_id=1404329012 instance=ExtResource("27_wp6ir")]
+
+[node name="stone" parent="." unique_id=970021070 instance=ExtResource("28_i8y4c")]
+
+[node name="stone_dark" parent="." unique_id=1165364246 instance=ExtResource("29_4xug7")]
+
+[node name="stone_with_copper" parent="." unique_id=650114803 instance=ExtResource("30_hx6jf")]
+
+[node name="stone_with_gold" parent="." unique_id=2015223542 instance=ExtResource("31_lyivb")]
+
+[node name="stone_with_silver" parent="." unique_id=995283093 instance=ExtResource("32_qo0h0")]
+
+[node name="striped_block_blue" parent="." unique_id=1111063940 instance=ExtResource("33_2qnf3")]
+
+[node name="striped_block_green" parent="." unique_id=176505083 instance=ExtResource("34_m62m3")]
+
+[node name="striped_block_red" parent="." unique_id=1579924619 instance=ExtResource("35_d86h3")]
+
+[node name="striped_block_yellow" parent="." unique_id=841253992 instance=ExtResource("36_8w7h8")]
+
+[node name="tree" parent="." unique_id=686477358 instance=ExtResource("37_pc0j4")]
+
+[node name="tree_with_snow" parent="." unique_id=1224055863 instance=ExtResource("38_b77bl")]
+
+[node name="water" parent="." unique_id=2054681959 instance=ExtResource("39_4assq")]
+
+[node name="wood" parent="." unique_id=1263204083 instance=ExtResource("40_upipm")]
