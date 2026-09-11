@@ -1,0 +1,12 @@
+print 5
+print 10
+
+let x = 5
+print x
+
+print x + 5
+let y = 3 + 7
+let z = x + y
+print z
+let a = input
+print a
