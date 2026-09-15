@@ -46,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
         <a class="button" href="chat.php">Zum Chat</a>
+        <a class="button" href="chat2.php">Zu Chat2</a>
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">

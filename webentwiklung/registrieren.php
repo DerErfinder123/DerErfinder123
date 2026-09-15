@@ -45,6 +45,8 @@ include "intro-funktion.php";
                         $anzahl = $datenbank->querySingle("SELECT COUNT(*) FROM nutzer WHERE name='$name'");
                         if ($anzahl == 0) {
                             $datenbank->exec("INSERT INTO nutzer VALUES ('$name', '$passwort', '')");
+                            $datenbank->exec("INSERT INTO rights VALUES ('$name', 'false')");
+
                             echo "<span style='color: #6AFBCF;'>Erfolgreich registriert!</span>";
                         } else {
                             echo "<span style='color: #F17A7C;'>Nutzername bereits vergeben!</span>";
