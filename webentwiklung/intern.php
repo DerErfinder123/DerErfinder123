@@ -36,35 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
     <div class="mitte">
-        <div class="notiz-container">
-            <div class="notiz-header">
-                <h1>Hallo <?php echo htmlspecialchars($_SESSION["name"], ENT_QUOTES, 'UTF-8'); ?>!</h1>
-                <p>Hier kannst du deine Notiz schreiben und später wieder laden.</p>
-            </div>
-            <form method="POST" class="notiz-form">
-                <textarea id="notiz" name="notiz" class="notiz-textarea"><?php echo htmlspecialchars($datenbank->querySingle("SELECT notiz FROM nutzer WHERE name='$name'"), ENT_QUOTES, 'UTF-8'); ?></textarea>
-                <div class="notiz-actions">
-                    <button class="button hintergrund-blau" type="submit">Speichern</button>
-                </div>
-            </form>
-            <a href="chat.php">
+        <div>
+            <h1>Hallo <?php echo $_SESSION["name"]; ?>!</h1>
         </div>
-
+        <div>
+            <form method="POST">
+                <textarea id="notiz" name="notiz"><?= $datenbank->querySingle("SELECT notiz FROM nutzer WHERE name='$name'"); ?></textarea>
+                <button class="button hintergrund-blau" type="submit">Speichern</button>
+            </form>
+        </div>
+        <a class="button" href="chat.php">Zum Chat</a>
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">
     </audio>
-    <!--<script>
-        const notiz = document.getElementById("notiz");
-
-        notiz.value = localStorage.getItem("notiz" + localStorage.getItem("name"));
-
-        function notizSpeichern() {
-            localStorage.setItem("notiz" + localStorage.getItem("name"), notiz.value);
-        }
-
-        notiz.addEventListener("input", notizSpeichern);
-    </script>-->
 </body>
 
 </html>
