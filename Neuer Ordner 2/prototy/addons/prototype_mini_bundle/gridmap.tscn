@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://us6hb4ysflli"]
+
+[ext_resource type="PackedScene" uid="uid://0vmntyr615js" path="res://addons/prototype_mini_bundle/prop_cube.tscn" id="1_ghwb7"]
+[ext_resource type="PackedScene" uid="uid://c5hkhu8upxsf7" path="res://addons/prototype_mini_bundle/prop_cylinder.tscn" id="2_l28ny"]
+[ext_resource type="PackedScene" uid="uid://ciuwt2yj4hcu2" path="res://addons/prototype_mini_bundle/prop_prism.tscn" id="3_db2kg"]
+[ext_resource type="PackedScene" uid="uid://dxvxy65pv5hoe" path="res://addons/prototype_mini_bundle/prop_sphere.tscn" id="4_aigl2"]
+[ext_resource type="PackedScene" uid="uid://caqayjkbvlel5" path="res://addons/prototype_mini_bundle/prop_torus.tscn" id="5_ertg8"]
+
+[node name="gridmap" type="Node3D"]
+
+[node name="PropCube" parent="." instance=ExtResource("1_ghwb7")]
+
+[node name="PropCylinder" parent="." instance=ExtResource("2_l28ny")]
+
+[node name="PropPrism" parent="." instance=ExtResource("3_db2kg")]
+
+[node name="PropSphere" parent="." instance=ExtResource("4_aigl2")]
+
+[node name="PropTorus" parent="." instance=ExtResource("5_ertg8")]

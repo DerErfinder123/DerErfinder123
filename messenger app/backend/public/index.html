@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Messenger</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; display:flex; height:100vh; }
+    .sidebar { width:260px; padding:16px; border-right:1px solid #ddd; box-sizing:border-box; }
+    .main { flex:1; display:flex; flex-direction:column; }jbsklmdjfnh
+    #messages { flex:1; padding:12px; overflow:auto; }
+    .msg { margin-bottom:8px; }
+    .meta { color:#666; font-size:12px; }
+    .composer { display:flex; padding:8px; border-top:1px solid #ddd; }
+    .composer input[type=text]{flex:1;padding:8px;font-size:14px}
+    .composer button{margin-left:8px;padding:8px 12px}
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Simple Messenger</h2>
+    <label>Benutzername</label>
+    <input id="username" type="text" placeholder="Dein Name" />
+    <label style="margin-top:8px;display:block">Server URL (optional)</label>
+    <input id="apiUrl" type="text" placeholder="z.B. https://chat.platform4.me oder leer für selben Host" />
+    <div style="margin-top:12px">
+      <button id="connectBtn">Verbinden</button>
+    </div>
+    <p style="margin-top:16px;color:#555;font-size:14px">Offline-Chat. Öffne mehrere Fenster, um Nachrichten zu testen.</p>
+  </div>
+  <div class="main">
+    <div id="messages"></div>
+    <div class="composer">
+      <input id="text" type="text" placeholder="Nachricht schreiben..." />
+      <button id="sendBtn">Senden</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

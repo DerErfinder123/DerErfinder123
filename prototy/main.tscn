@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvctvob21l41c"]
+
+[ext_resource type="PackedScene" uid="uid://8g0aujt76qbd" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="MeshLibrary" uid="uid://cd2nnhbuh20va" path="res://t2.meshlib" id="2_h2yge"]
+
+[node name="Node3D" type="Node" unique_id=421365697]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1437901442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.868987, 0)
+omni_range = 102.878
+
+[node name="player" parent="." unique_id=648150514 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6715446, 4.437658, 0)
+
+[node name="Camera3D2" type="Camera3D" parent="player" unique_id=1912786944]
+current = true
+
+[node name="GridMap" type="GridMap" parent="." unique_id=428811530]
+mesh_library = ExtResource("2_h2yge")
+data = {
+"cells": PackedInt32Array(0, 1, 39, 3, 65535, 39, 65533, 1, 20, 65531, 65534, 20)
+}
