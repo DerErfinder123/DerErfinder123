@@ -1,10 +1,12 @@
 <?php
+// Lädt die Datenbank und schützt diese Seite vor nicht eingeloggten Benutzern.
 include "intro-funktion.php";
 include "intro-funktion-intern.php";
 
 $name = $_SESSION["name"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Speichert die persönliche Notiz des aktuell eingeloggten Benutzers.
     $notiz = $_POST["notiz"];
 
     $datenbank->exec("UPDATE nutzer SET notiz='$notiz' WHERE name='$name'");
@@ -45,8 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button class="button hintergrund-blau" type="submit">Speichern</button>
             </form>
         </div>
-        <a class="button" href="chat.php">Zum Chat</a>
-        <a class="button" href="chat2.php">Zu Chat2</a>
+        <!-- Die zehn Raumlinks werden mit einer Schleife erzeugt. -->
+        <?php for ($raum = 1; $raum <= 10; $raum++): ?>
+            <a class="button" href="chat<?= $raum ?>.php">Zu Chat <?= $raum ?></a>
+        <?php endfor; ?>
+        <a class="button" href="admin.php">Benutzerrechte verwalten</a>
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">

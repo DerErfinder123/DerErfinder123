@@ -1,8 +1,10 @@
+/* Einheitliche Box-Groessen verhindern unerwartete Abstaende und Ueberlaeufe. */
 * {
     box-sizing: border-box;
 }
 
 body {
+    /* Dunkler Hintergrund und gut lesbare Standardschrift fuer die Chat-Oberflaeche. */
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -14,6 +16,7 @@ body {
 }
 
 .mitte {
+    /* Zentriert den Hauptinhalt jeder Seite. */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -72,6 +75,7 @@ button:hover {
 }
 
 .button {
+    /* Gemeinsames Aussehen fuer Links und Aktionsschaltflaechen. */
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -159,6 +163,7 @@ body > .text-links {
 }
 
 #nachrichten {
+    /* Nachrichtenbereich mit fester Hoehe und eigener Scrollleiste. */
     display: block;
     width: 100%;
     height: 300px;
@@ -171,6 +176,21 @@ body > .text-links {
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 6px;
     padding: 12px;
+}
+
+.chat2-mitglieder {
+    /* Liste der Benutzer, die fuer den aktuellen privaten Raum freigeschaltet sind. */
+    text-align: left;
+    color: #B7B9C4;
+}
+
+.chat2-mitglieder strong {
+    color: white;
+}
+
+.chat2-mitglieder ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
 }
 
 .mitte form:has(#eingabefeld) {

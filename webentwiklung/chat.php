@@ -1,10 +1,12 @@
 <?php
+// Dieser ältere öffentliche Chat verwendet die Tabelle "nachrichten".
 include "intro-funktion.php";
 include "intro-funktion-intern.php";
 
 $name = $_SESSION["name"];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Speichert eine neue Nachricht mit Benutzername und Unix-Zeitstempel.
     $zeit = time();
     $inhalt = $_POST["inhalt"];
 
@@ -38,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="mitte">
         <div>
+            <!-- Liest alle Nachrichten der Reihe nach aus der Datenbank. -->
             <div id="nachrichten"><?php $res = $datenbank->query("SELECT * FROM nachrichten");
              while ($zeile = $res->fetchArray(SQLITE3_ASSOC)) {
                 echo date("H:i:s", $zeile["zeit"]) . " ";

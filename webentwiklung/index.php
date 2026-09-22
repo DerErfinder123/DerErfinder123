@@ -1,4 +1,5 @@
 <?php
+// Initialisiert die Session und stellt die SQLite-Datenbank bereit.
 include "intro-funktion.php";
 ?>
 <!DOCTYPE html>
@@ -13,6 +14,7 @@ include "intro-funktion.php";
 
 <body class="mitte">
     <div>
+        <!-- Startseite mit den beiden möglichen Benutzeraktionen. -->
         <img src="logo.png" width="150">
         <h1>Willkommen beim Chat!</h1>
         <a class="button hintergrund-grün" href="login.php">Login</a>

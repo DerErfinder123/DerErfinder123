@@ -1,4 +1,5 @@
 <?php
+// Die Datenbanktabellen werden vor der Registrierung automatisch vorbereitet.
 include "intro-funktion.php";
 ?>
 <!DOCTYPE html>
@@ -38,6 +39,7 @@ include "intro-funktion.php";
                 <div>
                     <button class="button hintergrund-blau" type="submit">Registrieren</button>
                     <?php
+                    // Erstellt nur dann einen Benutzer, wenn der Name noch nicht vergeben ist.
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $name = $_POST["name"];
                         $passwort = $_POST["passwort"];
@@ -45,7 +47,8 @@ include "intro-funktion.php";
                         $anzahl = $datenbank->querySingle("SELECT COUNT(*) FROM nutzer WHERE name='$name'");
                         if ($anzahl == 0) {
                             $datenbank->exec("INSERT INTO nutzer VALUES ('$name', '$passwort', '')");
-                            $datenbank->exec("INSERT INTO rights VALUES ('$name', 'false')");
+                            // Neue Benutzer starten ohne Zugriff auf einen privaten Chatroom.
+                            $datenbank->exec("INSERT INTO rights (name) VALUES ('$name')");
 
                             echo "<span style='color: #6AFBCF;'>Erfolgreich registriert!</span>";
                         } else {

@@ -1,4 +1,5 @@
 <?php
+// Die gemeinsame Initialisierung öffnet die Datenbank und startet die Session.
 include "intro-funktion.php";
 ?>
 <!DOCTYPE html>
@@ -38,6 +39,7 @@ include "intro-funktion.php";
                 <div>
                     <button class="button hintergrund-grün">Login</button>
                     <?php
+                    // Prüft die eingegebenen Zugangsdaten und legt den Benutzernamen in der Session ab.
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $name = $_POST["name"];
                         $passwort = $_POST["passwort"];
