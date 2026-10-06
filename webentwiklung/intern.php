@@ -47,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button class="button hintergrund-blau" type="submit">Speichern</button>
             </form>
         </div>
+        <a class="button" href="chat.php">Zu Chat0</a>
         <!-- Die zehn Raumlinks werden mit einer Schleife erzeugt. -->
         <?php for ($raum = 1; $raum <= 10; $raum++): ?>
             <a class="button" href="chat<?= $raum ?>.php">Zu Chat <?= $raum ?></a>
