@@ -43,6 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="mitte">
         <div>
+            <div id="mitglieder"><?php
+            $r = $datenbank->query("SELECT name FROM rights WHERE $is_ = 'true'");
+            while ($mitglied = $r->fetchArray(SQLITE3_ASSOC)) {
+                echo htmlspecialchars($mitglied["name"], ENT_QUOTES, "UTF-8") . "<br>";
+            }
+            ?></div>
             <div id="nachrichten"><?php $res = $datenbank->query("SELECT * FROM $n");
              while ($zeile = $res->fetchArray(SQLITE3_ASSOC)) {
                 echo date("H:i:s", $zeile["zeit"]) . " ";
