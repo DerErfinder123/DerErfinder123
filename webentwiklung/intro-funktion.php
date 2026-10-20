@@ -12,6 +12,6 @@ $datenbank->exec("CREATE TABLE IF NOT EXISTS  rights(name, is_1, is_2, is_3, is_
 // Raum 1 und 2 verwenden die bereits vorhandenen Tabellen.
 $datenbank->exec("CREATE TABLE IF NOT EXISTS nachrichten1 (name, zeit, inhalt)");
 // Für die Räume 3 bis 10 wird jeweils eine eigene Nachrichtentabelle angelegt.
-for ($raum = 2; $raum <= 10; $raum++) {
-	$datenbank->exec("CREATE TABLE IF NOT EXISTS nachrichten$raum (name, zeit, inhalt)");
+for ($raumNr = 2; $raumNr <= 10; $raumNr++) {
+	$datenbank->exec("CREATE TABLE IF NOT EXISTS nachrichten$raumNr (name, zeit, inhalt)");
 }
