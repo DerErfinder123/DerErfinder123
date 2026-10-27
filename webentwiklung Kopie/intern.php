@@ -4,6 +4,16 @@ include "intro-funktion.php";
 include "intro-funktion-intern.php";
 
 $name = $_SESSION["name"];
+$neueChatsAbfrage = $datenbank->prepare(
+    "SELECT chat_rooms.id, chat_rooms.title
+    FROM chat_rooms
+    INNER JOIN chat_room_users ON chat_room_users.room_id = chat_rooms.id
+    WHERE chat_room_users.user_name = :name
+    ORDER BY chat_rooms.title"
+);
+$neueChatsAbfrage->bindValue(":name", $name, SQLITE3_TEXT);
+$neueChats = $neueChatsAbfrage->execute();
+$istAdmin = $name === "samuelroessel";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Speichert die persönliche Notiz des aktuell eingeloggten Benutzers.
@@ -52,7 +62,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php for ($raum = 1; $raum <= 10; $raum++): ?>
             <a class="button" href="chat<?= $raum ?>.php">Zu Chat <?= $raum ?></a>
         <?php endfor; ?>
-        <a class="button" href="admin.php">Benutzerrechte verwalten</a>
+        <?php while ($raum = $neueChats->fetchArray(SQLITE3_ASSOC)): ?>
+            <a class="button" href="chatraum.php?id=<?= (int) $raum["id"] ?>">
+                <?= htmlspecialchars($raum["title"], ENT_QUOTES, "UTF-8") ?>
+            </a>
+        <?php endwhile; ?>
+        <a class="button" href="chats.php">Meine Chats verwalten</a>
+        <?php if ($istAdmin): ?>
+            <a class="button" href="admin.php">Benutzerrechte verwalten</a>
+        <?php endif; ?>
     </div>
     <audio autoplay>
         <source src="musik.mp3" type="audio/mpeg">
