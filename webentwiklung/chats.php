@@ -28,6 +28,5 @@ include "intro-funktion-intern.php";
         </form>
     </div>
     <div class="mitte"><?php
-    while
     
         
